@@ -172,6 +172,84 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
+     * Returns minimum value of tree
+     * 
+     * @param root
+     * @return
+     */
+    private T minValue(Node<T> root) {
+        T minv = root.value;
+        while (root.left != null) {
+            minv = root.left.value;
+            root = root.left;
+        }
+
+        return minv;
+    }
+
+    /**
+     * Helper method for delete
+     * 
+     * @param node
+     * @param value
+     * @return
+     */
+    public Node<T> deleteRecursive(Node<T> node, T value) {
+        /* base case: If the tree is empty */
+        if (node == null)
+            return node;
+
+        int compareVal = value.compareTo(node.value);
+
+        /* otherwise, recur down the tree */
+        if (compareVal < 0) {
+            node.left = deleteRecursive(node.left, value);
+        } else if (compareVal > 0) {
+            node.right = deleteRecursive(node.right, value);
+        }
+
+        // if key is same as root's key, then This is the node
+        // to be deleted
+        else {
+            // decrement the size, we just found the element
+            _size--;
+
+            // node with only one child or no child
+            if (node.left == null) {
+                return node.right;
+            } else if (node.right == null) {
+                return node.left;
+            }
+
+            // node with two children: get the in-order successor (smallest
+            // in the right subtree)
+            node.value = minValue(node.right);
+
+            // delete the in-order successor, we do not want duplicates stored in tree
+            node.right = deleteRecursive(node.right, node.value);
+        }
+
+        return node;
+    }
+
+    /**
+     * Deletes value T from tree
+     * 
+     * @param value
+     */
+    public void delete(T value) {
+        _root = deleteRecursive(_root, value);
+    }
+
+    /**
+     * Deletes all elements of tree
+     */
+    public void deleteAll() {
+        _root = null;
+        _size = 0;
+    }
+
+    /**
      * Returns tree size
      * 
      * @return

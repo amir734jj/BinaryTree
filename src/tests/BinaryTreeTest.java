@@ -93,4 +93,42 @@ class BinaryTreeTest {
         // Assert
         Assert.assertArrayEquals(clonedValues, list);
     }
+
+    @Test
+    void test__delete() {
+        // Arrange
+        tree = new BinaryTree<Integer>(values);
+
+        // Act
+        tree.delete(1);
+        List<Integer> list = tree.toList();
+
+        // Assert
+        Assert.assertFalse(list.contains(1));
+    }
+
+    @Test
+    void test__deleteEvery() {
+        // Arrange
+        tree = new BinaryTree<Integer>(values);
+
+        // Act
+        List<Integer> list = tree.toList();
+        list.forEach(x -> tree.delete(x));
+
+        // Assert
+        Assert.assertEquals(0, tree.getSize());
+    }
+
+    @Test
+    void test__deleteAll() {
+        // Arrange
+        tree = new BinaryTree<Integer>(values);
+
+        // Act
+        tree.deleteAll();
+
+        // Assert
+        Assert.assertEquals(0, tree.getSize());
+    }
 }
