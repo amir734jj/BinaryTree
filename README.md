@@ -1,4 +1,4 @@
-# BinaryTreeHeapSort
+# Binary Tree Heap Sort
 Simple heap sort using a binary tree with automatic balancing.
 
 - Add:  `O(log(n))`   // thanks to self-balancing
