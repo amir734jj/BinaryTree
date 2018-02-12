@@ -1,21 +1,25 @@
 # BinaryTreeHeapSort
-Simple heap sort using a binary tree with automatic balancing
+Simple heap sort using a binary tree with automatic balancing.
+
+- Add:  `O(log(n))`   // thanks to self-balancing
+- Sort: `O(n)`        // simple recursion to visit all nodes
+- Space: `O(n)`       // nothing special here!
 
 ```java
-	// initialize
-	BinaryTree<Integer> tree = new BinaryTree<Integer>();
-	
-	// add random numbers
-	for(int i = 0; i < 200; i++) {
-		tree.add(i);
-	}
-	
-	// print the list
-	System.out.println(tree.toList());
-	
-	// balance the tree
-	tree.naivelyBalanceTree();
-	
-	// print the tree again
-	System.out.println(tree.toList());
+// initialize
+BinaryTree<Integer> tree = new BinaryTree<Integer>();
+
+// add random numbers
+for(int i = 0; i < 200; i++) {
+	tree.add(i);
+}
+
+// print the list
+System.out.println(tree.toList());
+
+// balance the tree
+tree.naivelyBalanceTree();
+
+// print the tree again
+System.out.println(tree.toList());
 ```
