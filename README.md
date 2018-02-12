@@ -1,9 +1,12 @@
 # Binary Tree Heap Sort
 Simple heap sort using a binary tree with automatic balancing.
 
-- Add:  `O(log(n))`   // thanks to self-balancing
-- Sort: `O(n)`        // simple recursion to visit all nodes
-- Space: `O(n)`       // nothing special here!
+```
+- Add:  	`O(log(n))`	// thanks to self-balancing
+- Delete:	`O(log(n))`	// againt, thanks to self-balancing
+- Sort:		`O(n)`		// simple recursion to visit all nodes
+- Space:	`O(n)`		// nothing special here!
+```
 
 ```java
 // initialize
