@@ -8,6 +8,8 @@ Simple heap sort using a binary tree with automatic balancing.
 - Space:	`O(n)`		// nothing special here!
 ```
 
+#### Examples:
+
 ```java
 // initialize
 BinaryTree<Integer> tree = new BinaryTree<Integer>();
