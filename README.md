@@ -1,6 +1,7 @@
 # Binary Tree Heap Sort
 Simple heap sort using a binary tree with automatic balancing.
 
+#### Time complexities:
 ```
 - Add:  	`O(log(n))`	// thanks to self-balancing
 - Delete:	`O(log(n))`	// againt, thanks to self-balancing
